@@ -2,7 +2,7 @@
 // Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
 // tampare all'interno di una lista, un item per ogni todo.
 // Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
-
+// Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
 Vue.createApp({
 	data() {
 		return {
@@ -37,7 +37,7 @@ Vue.createApp({
 	},
 	methods: {
 		addToList: function () {
-			if(this.newItemText != null){
+			if (this.newItemText != null) {
 				const newTodo = {
 					done: false,
 					text: this.newItemText,
