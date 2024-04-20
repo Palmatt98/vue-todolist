@@ -16,7 +16,8 @@
 			<main>
 				<div class="container">
 					<div class="top">
-						<input v-model="newItemText" type="text" placeholder="es: Fare la spesa..." />
+						<input @keyup.enter="enterClicked"
+            v-model="newItemText" type="text" placeholder="es: Fare la spesa..." />
 						<button @click="addToList" type="button" class="btn btn-filled">Add Task</button>
 					</div>
 					<div class="tasks">
