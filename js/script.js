@@ -19,7 +19,7 @@ Vue.createApp({
 					done: false,
 					text: "Interview John H.",
 				},
-				{	
+				{
 					done: true,
 					text: "Summit update to mobile",
 				},
@@ -32,6 +32,19 @@ Vue.createApp({
 					text: "ciao sono pippo",
 				},
 			],
+			newItemText: null,
 		};
+	},
+	methods: {
+		addToList: function () {
+			if(this.newItemText != null){
+				const newTodo = {
+					done: false,
+					text: this.newItemText,
+				};
+				this.todos.push(newTodo);
+				this.newItemText = null;
+			}
+		},
 	},
 }).mount(".container-js");

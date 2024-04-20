@@ -16,8 +16,8 @@
 			<main>
 				<div class="container">
 					<div class="top">
-						<input type="text" placeholder="es: Fare la spesa..." />
-						<button type="button" class="btn btn-filled">Add Task</button>
+						<input v-model="newItemText" type="text" placeholder="es: Fare la spesa..." />
+						<button @click="addToList" type="button" class="btn btn-filled">Add Task</button>
 					</div>
 					<div class="tasks">
 						<ul class="inner-list">
