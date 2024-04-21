@@ -16,20 +16,25 @@
 			<main>
 				<div class="container">
 					<div class="top">
-						<input @keyup.enter="enterClicked"
+						<input @keyup.enter="addToList"
             v-model="newItemText" type="text" placeholder="es: Fare la spesa..." />
 						<button @click="addToList" type="button" class="btn btn-filled">Add Task</button>
 					</div>
 					<div class="tasks">
 						<ul class="inner-list">
 							<li 
-                v-for="todo in todos"
+                v-for="(todo, index) in todos"
                 :class="todo.done === true ? 'done' : null"
+                @click="changeDone(todo)"
               >
 								<span 
                   class="circle"
                   :class="todo.done === true ? 'checked' : 'delete'"
                 >{{todo.text}}</span>
+                <span 
+                  @click="removeTodo(index)"
+                  class="close-icon"
+                >&#10005;</span>
 							</li>
 						</ul>
 					</div>
